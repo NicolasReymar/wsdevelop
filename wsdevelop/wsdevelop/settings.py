@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import os
-import dj_database_url
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qn%hnw2)-k_tth5$fe*$87%8ddhbhng@x+m*chq&(q(3_1^qoo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'wsdevelop.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -76,12 +75,20 @@ WSGI_APPLICATION = 'wsdevelop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {}
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
+import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['DATABASE_URL'].update(db_from_env)
+DATABASES['default'].update(db_from_env)
+
+
 
 
 # Password validation
@@ -129,5 +136,4 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
