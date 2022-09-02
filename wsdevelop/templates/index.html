@@ -14,71 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
   </head>
-  
-  <body class="footer-offset">
-    
-    <div class="container">
-      <div class="row">
-        <div class="col w-25 p-3">
-          <button type="button" class="btn btn-primary btn-sm" href="meli">Mercado Libre</button>
-          <button type="button" class="btn btn-primary btn-sm">Linio</button>
-          <button type="button" class="btn btn-primary btn-sm" href="falabella">Falabella</button>
-        </div>
-        <div class="col">
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          
-        </div>
-        <div class="col">
-          <table id="table_id" class="display">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>CIUDAD</th>
-                <th>PUNTUACION</th>
-                <th>LINK</th>
-                <th>NIVEL VENDEDOR</th>
-                <th>TRANSACCIONES TOTALES</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{ table_content|safe }}
-            </tbody>
-          </table>
-        </div>
-        <div class="col">
-        </div>
-      </div>
-    </div>
-    
-    
-    
-    
-    
-    {% block js %}
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
-    <script>
-      $(document).ready( function(){
-        $('#table_id').DataTable({
-          lengthMenu: [
-            [10, 25, 50, -1],
-            [10, 25, 50, 'All'],
-        ],
-          dom:'B<"clear">lfrtip',
-          buttons:{
-            name: 'primary',
-            buttons: ['copy']
-          }
-        });
-      });
-    </script>
-    {% endblock js %}
+  {% block content %}
+  {% endblock content %}
     
   </body>
   
