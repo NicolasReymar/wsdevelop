@@ -1,44 +1,43 @@
 {% extends 'index.html' %}
 {% block content %}
-<body class="footer-offset">
-  <div class="container">
-    <div class="row">
-      <div class="col w-25 p-3">
-        <button type="button" class="btn btn-primary btn-sm" href="meliPage.html" action="{% url 'meliPage' %}">Mercado Libre</button>
-        <button type="button" class="btn btn-primary btn-sm">Linio</button>
-        <button type="button" class="btn btn-primary btn-sm" href="falabellaPage.html" action="{% url 'falabellaPage' %}">Falabella</button>
-      </div>
-      <div class="col">
-        
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col w-25 p-3">
+      <button type="button" class="btn btn-primary btn-sm" href="meliPage.html" action="{% url 'meliPage' %}">Mercado Libre</button>
+      <button type="button" class="btn btn-primary btn-sm">Linio</button>
+      <button type="button" class="btn btn-primary btn-sm" href="falabellaPage.html" action="{% url 'falabellaPage' %}">Falabella</button>
     </div>
-    <div class="row">
-      <div class="col">
-        
-      </div>
-      <div class="col">
-        <table id="table_id" class="display">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>NOMBRE</th>
-              <th>CIUDAD</th>
-              <th>PUNTUACION</th>
-              <th>LINK</th>
-              <th>NIVEL VENDEDOR</th>
-              <th>TRANSACCIONES TOTALES</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{ table_content|safe }}
-          </tbody>
-        </table>
-      </div>
-      <div class="col">
-      </div>
+    <div class="col">
+      
     </div>
   </div>
-</body>
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col">
+      <table id="table_id" class="display">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CIUDAD</th>
+            <th>PUNTUACION</th>
+            <th>LINK</th>
+            <th>NIVEL VENDEDOR</th>
+            <th>TRANSACCIONES TOTALES</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ table_content|safe }}
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
   
   
   
