@@ -19,7 +19,7 @@ from mainSite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('meli', views.basePage,name='basePage'),
+    path('meli', views.basePage,name='meliPage'),
     #path('/linio',views.linioPage, name='linioPage'),
     path('falabella', views.falabellaPage, name='falabellaPage'),
 ]
