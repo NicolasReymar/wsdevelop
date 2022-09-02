@@ -35,7 +35,7 @@ def meliPage(request):
                         '''.format(i[0],i[1],i[3],i[5],i[6],i[7],i[8])
   table_content += ''
 
-  return render(request,'index.html',context={'table_content' : table_content} )
+  return render(request,'index.html',context={'table_content' : table_content})
 
 
 
