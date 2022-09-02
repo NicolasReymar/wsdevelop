@@ -51,7 +51,7 @@ def falabellaPage(request):
                         <td>{}</td>
                         <td>{}</td>
                         </tr>
-                        '''.format(i[0],i[1],i[2],i[3])
+                        '''.format(i[dataToShow][0],i[dataToShow][1],i[dataToShow][2],i[dataToShow][3])
   table_content += ''
 
   return render(request,'falabellaPage.html',context={'table_content' : table_content} )
