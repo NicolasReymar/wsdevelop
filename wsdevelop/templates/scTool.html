@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Title</title>  
     {% load static %}
+    <link rel="stylesheet" href="{% static 'tableScript.css' %}"
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -15,15 +16,16 @@
     
   </head>
 {% block toolIndex %}
-
-<a href=".."> volver </a>
+<div>
+  <a href=".."> volver </a>
+</div>
 
 <div class="container" style="background-color: #459934; padding: auto; ">
   <div class="row">
-    <div class="btn-group" role="group" aria-label="Buttons">
-      <a type="button" class="btn btn-primary btn-sm" href="/meli">Mercado Libre</a>
-      <a type="button" class="btn btn-primary btn-sm" href="#">Linio</a>
-      <a type="button" class="btn btn-primary btn-sm" href="/falabella">Falabella</a>
+    <div class="btn" role="group" aria-label="Buttons">
+      <a type="button" class="btn btn-primary " href="/meli">Mercado Libre</a>
+      <a type="button" class="btn btn-primary " href="#">Linio</a>
+      <a type="button" class="btn btn-primary " href="/falabella">Falabella</a>
     </div>
     <div class="col">
       {% block table %}

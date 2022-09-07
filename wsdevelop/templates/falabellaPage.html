@@ -2,23 +2,25 @@
 {% include 'tableScript.html' %}
 {% block table %}
   <div class="row" >
-    <div class="col"></div>
-    <div class="col">
-      <table id="table_id" class="display">
-        <thead>
-          <tr>
-            <th>NOMBRE</th>
-            <th>ITEMS VENDIDOS</th>
-            <th>LINK</th>
-            <th>CATEGORIA</th>
-          </tr>
-        </thead>
-        <tbody style="background-color: #ff5e5e;">
-          {{ table_content|safe }}
-        </tbody>
-      </table>
+    <div class="col-1"></div>
+    <div class="col-10 " >
+      <div style="width:100%">
+        <table id="table_id" class="display">
+          <thead>
+            <tr>
+              <th>NOMBRE</th>
+              <th>ITEMS VENDIDOS</th>
+              <th>LINK</th>
+              <th>CATEGORIA</th>
+            </tr>
+          </thead>
+          <tbody style="background-color: #ff5e5e;">
+            {{ table_content|safe }}
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="col">
+    <div class="col-1">
     </div>
   </div>
   

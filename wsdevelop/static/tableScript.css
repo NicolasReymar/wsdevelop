@@ -1,0 +1,13 @@
+body {
+  font: 90%/1.45em "Helvetica Neue", Verdana, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff;
+}
+.truncate {
+  max-width:200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
