@@ -22,4 +22,6 @@ urlpatterns = [
     path('meli/', views.meliPage,name='meliPage'),
     #path('/linio',views.linioPage, name='linioPage'),
     path('falabella/', views.falabellaPage, name='falabellaPage'),
+    path('',views.index, name='index'),
+    path('scTool/',views.scTool, name='scTool'),
 ]

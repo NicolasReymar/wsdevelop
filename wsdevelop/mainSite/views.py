@@ -1,4 +1,5 @@
 from glob import escape
+from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
 import os
@@ -9,6 +10,8 @@ TEMPLATE_DIRS = {
 }
 
 
+def index(request):
+  return render(request,'index.html')
 
 def meliPage(request):
   dataToShow = [['550063615', 'MERCADOLIBRE ELECTRONICA_CL', 'Las Condes', 'METROPOLITANA', 'brand;large_seller;mshops', '8216', 'http://perfil.mercadolibre.cl/MERCADOLIBRE+ELECTRONICA_CL', 'platinum', '254957', '237800', '17157', '0.92', '0.02', '0.06'], ['385845686', 'MISTORECHILE', 'Las Condes', 'METROPOLITANA', 'brand;large_seller', '2661', 'http://perfil.mercadolibre.cl/MISTORECHILE', 'platinum', '36756', '34651', '2105', '0.87', '0.04', '0.09'], ['418010336', 'TIENDASOFICIALESIM', 'Quillota', 'CL-VS', 'brand;large_seller;eshop;mshops', '5497', 'http://perfil.mercadolibre.cl/TIENDASOFICIALESIM', 'platinum', '45719', '43645', '2074', '0.91', '0.03', '0.06'], ['301258112', 'ADMINISTRADORA ADP', 'Pudahuel', 'METROPOLITANA', 'brand;large_seller;eshop;mshops', '10545', 'http://perfil.mercadolibre.cl/ADMINISTRADORA+ADP', 'platinum', '97449', '91571', '5878', '0.88', '0.03', '0.09'], ['305330042', 'ELECTRONICAGAMER', 'Santiago', 'CL-RM', 'brand;large_seller', '1851', 'http://perfil.mercadolibre.cl/ELECTRONICAGAMER', 'platinum', '5709', '5315', '394', '0.9', '0.03', '0.07'], ['236292130', 'MOBILEHUT', 'Santiago', 'METROPOLITANA', 'brand;large_seller;eshop;mshops', '19931', 'http://perfil.mercadolibre.cl/MOBILEHUT', 'platinum', '74228', '70118', '4110', '0.94', '0.02', '0.04'], ['700043984', 'RADIOVICTORIATCLCHILESPARA', 'Pudahuel', 'METROPOLITANA', 'brand;large_seller;mshops', '336', 'http://perfil.mercadolibre.cl/RADIOVICTORIATCLCHILESPARA', 'platinum', '8347', '7654', '693', '0.85', '0.05', '0.1'], ['1169010278', 'COCO5153227', 'Providencia', 'CL-RM', 'brand;large_seller;mshops', '0', 'http://perfil.mercadolibre.cl/COCO5153227', 'None', '157', '147', '10', '0', '1', '0'], ['271947391', 'MOWSTORE', 'Vitacura', 'CL-RM', 'brand;large_seller;mshops', '1338', 'http://perfil.mercadolibre.cl/MOWSTORE', 'platinum', '11418', '11003', '415', '0.96', '0.02', '0.02'], ['502576083', 'CUBO24', 'Las Condes', 'CL-RM', 'brand;large_seller;eshop', '123', 'http://perfil.mercadolibre.cl/CUBO24', 'platinum', '923', '851', '72', '0.97', '0.01', '0.02'], ['809231755', 'ELEL98543', 'Cerrillos', 'CL-RM', 'brand;large_seller', '65', 'http://perfil.mercadolibre.cl/ELEL98543', 'platinum', '10729', '10210', '519', '0.9', '0.01', '0.09'], ['1086025078', 'RMCOMMUNICATIONSSPARMCOMMUN', 'Las Condes', 'CL-RM', 'brand;large_seller;mshops', '2', 'http://perfil.mercadolibre.cl/RMCOMMUNICATIONSSPARMCOMMUN', 'silver', '72', '66', '6', '1', '0', '0'], ['330176422', 'REUSE CL', 'Providencia', 'METROPOLITANA', 'brand;large_seller;eshop;mshops', '55', 'http://perfil.mercadolibre.cl/REUSE+CL', 'platinum', '478', '419', '59', 
@@ -35,7 +38,7 @@ def meliPage(request):
                         '''.format(i[0],i[1],i[3],i[5],i[6],i[7],i[8])
   table_content += ''
 
-  return render(request,'index.html',context={'table_content' : table_content})
+  return render(request,'meliPage.html',context={'table_content' : table_content})
 
 
 
@@ -55,3 +58,6 @@ def falabellaPage(request):
   table_content += ''
 
   return render(request,'falabellaPage.html',context={'table_content' : table_content} )
+
+def scTool(request):
+  return render(request,'scTool.html')
