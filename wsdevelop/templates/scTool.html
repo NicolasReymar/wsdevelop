@@ -23,14 +23,17 @@
     {% block toolIndex %}
     <div>
 
-      <p>
+      
 
       <div class="container " style="background-color: #c0c0c0; padding: auto; ">
         <div class="row" style="background-color: #c0c0c0; padding: auto; ">
-          <div class="btn col-1">
-            <a href=".."> volver </a>
+          <p style="height: 100%;"></p>
+          <div class="btn col-2" >
+            <a type="button" class="btn btn-primary" style="background-color: #3d3d3d; border: #3f3f3f;" href="..">
+              Volver
+            </a>
           </div>
-          <div class="col-2" name="boton-pais">
+          <div class="btn col-5" name="boton-pais">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #3d3d3d; border: #3f3f3f;">
               Pais - 
               {% if country == "CL" %}
@@ -48,7 +51,7 @@
             </ul>
           </div>
 
-          <div class="col-5" role="group" aria-label="Buttons" name="botones-marketplaces">
+          <div class="btn col-5" role="group" aria-label="Buttons" name="botones-marketplaces">
             <div class="" role="group" >
               
               {% if country == "CL" %}

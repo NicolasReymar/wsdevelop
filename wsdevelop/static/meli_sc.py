@@ -579,19 +579,6 @@ def getMeliSc():
   ]
 
 
-  categories = [
-      ('MLC1051', 'Celulares y Telefonía'),
-      ('MLC1648', 'Computación'),
-      ('MLC1000', 'Electrónica, Audio y Video'),
-      ('MLC1574', 'Hogar y Muebles'),
-      ('MLC1010', 'Audio'),
-      ('MLC5054', 'Cables'),
-      ('MLC4632', 'Controles Remotos'),
-      ('MLC430918', 'Cables y Hubs USB'),
-      ('MLC430687', 'Notebooks y Accesorios'),
-      ('MLC454379', 'Periféricos de PC'),
-      ('MLC433676', 'Tablets y Accesorios')
-  ]
 
   sellers = []
   stored_data = []
@@ -618,7 +605,7 @@ def getMeliSc():
       print(i[1],'',end='')
       offset = 0
       while True:
-          if offset > 100:
+          if offset > 1000:
               print('Page overflow')
               break
           response = requests.get(baseUrl+'&category='+i[0]+'&official_store=all'+'&offset='+str(offset))

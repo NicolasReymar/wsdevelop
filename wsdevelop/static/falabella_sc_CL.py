@@ -178,7 +178,7 @@ def getFalabellaSc():
         dataToStore = {}
         while True:
             
-            if page > 10:
+            if page > 200:
                 print('Page overflow')
                 break
             response = requests.get(baseUrl+'zones=ZL_CERRILLOS%2CLOSC%2C130617%2C13&categoryId='+i[0]+'&page='+str(page))
