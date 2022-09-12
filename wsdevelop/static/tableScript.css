@@ -11,3 +11,9 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+html#mainBody {
+  height: 100%;
+}
+body#mainBody {
+  min-height: 100%;
+}
