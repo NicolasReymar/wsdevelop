@@ -4,8 +4,14 @@
     <p></p>
     <div class="col-1"></div>
     <div class="col">
-      <p>
-        <a type="button" class="btn btn-primary " style="background-color: #3d3d3d; border: #3f3f3f;" href="/falabella?country={{country}}&execute_function=TRUE">Ejecutar funcion</a>
+      <form action="./">
+        <input type="submit" value="TRUE" class="btn btn-primary " style="background-color: #3d3d3d; border: #3f3f3f;" >Ejecutar funcion<br>
+        <label for="formControlRange" class="form-label">Maximo de paginas: (MAX 200)</label>
+        <input name = "range" type="range" class="form-control-range" onInput="$('#rangeval').html($(this).val())">
+        <a id="rangeval"></a>
+        <input type="text" name="country" value="{{country}}" style="visibility: hidden;">
+        <input type="text" name="execute_function" value="TRUE" style="visibility: hidden;">
+      </form>
     </div>
     
   </div>

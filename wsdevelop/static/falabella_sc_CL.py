@@ -3,7 +3,7 @@ from datetime import date
 import json
 
 
-def getFalabellaSc():
+def getFalabellaSc(maxOffset):
     categories = [
             ['cat70057',
             'Home > Computación-Notebooks'],
@@ -152,23 +152,10 @@ def getFalabellaSc():
 
         
     
-
-    stored_data = []
     baseUrl = 'https://www.falabella.com/s/browse/v1/listing/cl?'
     page = 0
 
 
-    verb = True
-    count = 5
-
-
-    tags = ['Nombre','Items vendidos','Link','Categoría']
-    fileName = date.today()
-
-
-    savedFile = open(str(fileName)+'-falabella.csv','a')
-    print(','.join(tags),file=savedFile)
-    savedFile.close()
 
     data = []
 
@@ -178,7 +165,7 @@ def getFalabellaSc():
         dataToStore = {}
         while True:
             
-            if page > 200:
+            if page > round(200 * (maxOffset/100)):
                 print('Page overflow')
                 break
             response = requests.get(baseUrl+'zones=ZL_CERRILLOS%2CLOSC%2C130617%2C13&categoryId='+i[0]+'&page='+str(page))
@@ -206,5 +193,4 @@ def getFalabellaSc():
         print(dataToStore)
         for j in dataToStore:
             data.append(dataToStore[j])
-    print("SC done.")
     return(data)

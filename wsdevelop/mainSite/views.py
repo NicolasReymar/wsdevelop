@@ -5,7 +5,7 @@ from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
 import os
-from static import meli_sc,falabella_sc_CL
+from static import meli_sc_CL,meli_sc_PE,falabella_sc_CL
 
 # Create your views here.
 TEMPLATE_DIRS = {
@@ -17,6 +17,7 @@ def index(request):
   return render(request,'index.html')
 
 def meliPage(request):
+  print('mpage')
 
   if(request.method == "GET"):
     try:
@@ -26,8 +27,19 @@ def meliPage(request):
       country = 'NA'
 
     execute_function = request.GET.get('execute_function')
-    if(execute_function == 'TRUE'):
-      dataToShow = meli_sc.getMeliSc()
+    range = request.GET.get('range')
+
+    if(execute_function == 'TRUE' and range):
+      
+      if(country == 'CL'):
+        print('dtsh1')
+        dataToShow = meli_sc_CL.getMeliSc(int(range))
+      elif(country == 'PE'):
+        print('dtsh2')
+        dataToShow = meli_sc_PE.getMeliSc(int(range))
+      else:
+        print('dtsh3')
+        dataToShow = ''
 
       table_content = '''<tr>'''
       for i in dataToShow:
@@ -59,8 +71,9 @@ def falabellaPage(request):
     execute_function = request.GET.get('execute_function')
     print('execute_function = ',execute_function)
     print('country = ',country)
+    range = request.GET.get('range')
     if(execute_function == 'TRUE' and country == 'CL'):
-      dataToShow = falabella_sc_CL.getFalabellaSc()
+      dataToShow = falabella_sc_CL.getFalabellaSc(int(range))
 
       table_content = '''<tr>'''
       for i in dataToShow:
